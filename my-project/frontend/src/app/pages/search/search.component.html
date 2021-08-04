@@ -1,0 +1,28 @@
+<div mat-dialog-content>
+    <form class="search-form">
+        <mat-form-field>
+            <span matPrefix>
+                <md-icon class="material-icons">search</md-icon>
+            </span>
+            <input matInput type="search" [(ngModel)]="searchText" (ngModelChange)="dataChanged($event)"
+                [ngModelOptions]="{standalone: true}" autofocus style="width: 300px; display: flex; justify-content: center;">
+        </mat-form-field>
+    </form>
+    <h2 *ngIf="showHeader === true">
+        Search Results
+    </h2>
+    <div class="search-cards">
+        <mat-card class="card" *ngFor="let product of products">
+            <img mat-card-image src='{{ "../../../assets/uploads/" + product["slug"] + ".png" }}'
+                alt="{{ product['title'] }}">
+            <mat-card-content>
+                <p>
+                    {{ product['title'] }}
+                </p>
+                <p>
+                    {{ product['price'] | currency:'USD'}}
+                </p>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

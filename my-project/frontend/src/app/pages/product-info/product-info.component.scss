@@ -1,0 +1,69 @@
+.title {
+    // margin-top: 105px;
+    margin-left: 21px;
+    font-size: 36px;
+    line-height: 38px;
+}
+
+.infoBLock {
+    margin-top: 65px;
+}
+
+.price {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 292px;
+    margin-left: 23px;
+    padding-bottom: 50px;
+}
+
+.right {
+    margin-left: auto;
+}
+
+.text {
+    padding-left: 7px;
+    font-size: 14px;
+}
+
+.mat-list-base .mat-list-item, .mat-list-base .mat-list-option {
+    height: 24px;
+}
+
+.topButton {
+    margin-top: 95px;
+    margin-left: 23px;
+    width: 295px;
+    height: 60px;
+    font-size: 17px;
+}
+
+.titleText { 
+    text-align: center;
+    font-size: 34px;
+    letter-spacing: 1.7px;
+    font-weight: 700;
+    color: #000;
+    margin-top: 104px;
+}
+
+.description {
+    color: #374151;
+    letter-spacing: 1.0px;
+    line-height: 30px;
+    width: 544px;
+    text-align: left;
+    margin: auto;
+}
+
+.bottomLine {
+    border: 1px solid #626262;
+    background: #626262;
+    width: 110px;
+    height: 2px;
+    margin: auto;
+    margin-top: 9px;
+    margin-bottom: 49px;
+    border-radius: 50px;
+}

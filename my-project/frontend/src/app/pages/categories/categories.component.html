@@ -1,0 +1,28 @@
+<!-- Container with generated cards for categories in general -->
+<div class="wrap cards" *ngIf="categoryId > 0 ? !showCategoryProducts : !showCategoryProducts">
+    <mat-card class="card" *ngFor="let category of categories" [routerLink]="[category['id']]">
+        <img mat-card-image src='{{ "../../../assets/uploads/" + category["slug"] + ".png" }}'
+            alt="{{ category['name'] }}">
+        <mat-card-content>
+            <p>
+                {{ category['name'] }}
+            </p>
+        </mat-card-content>
+    </mat-card>
+</div>
+
+<!-- Container with generated cards for categories' products with its name and cost -->
+<div class="wrap cards" *ngIf="showCategoryProducts">
+    <mat-card class="card" *ngFor="let categoryProduct of categoryProducts" (click)="productNavigation(categoryProduct['id'])">
+        <img mat-card-image src='{{ "../../../assets/uploads/" + categoryProduct["slug"] + ".png" }}'
+            alt="{{ categoryProduct['title'] }}">
+        <mat-card-content>
+            <p>
+                {{ categoryProduct['title'] }}
+            </p>
+            <p>
+                {{ categoryProduct['price'] | currency:'USD'}}
+            </p>
+        </mat-card-content>
+    </mat-card>
+</div>

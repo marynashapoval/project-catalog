@@ -1,0 +1,54 @@
+<div class="wrap product-info">
+    <div class="product-info_overview">
+        <img class="product-image" src="{{ '../../../assets/uploads/' + productImage['name'] }}">
+        <div class="infoBLock">
+            <h2 class="title">
+                {{ productInfo['title'] }}
+            </h2>
+            <p class="price">
+                <span>Price</span>
+                {{ productInfo['price'] | currency:'CAD':'symbol-narrow':'4.2-2'}}
+            </p>
+            <mat-list *ngFor="let specifications of productSpecifications">
+                <mat-list-item>
+                    <span class="text">
+                        {{ specifications['key'] }}
+                    </span>
+                    <span class="right text">
+                        {{ specifications['value'] }}
+                    </span>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+            </mat-list>
+            <button mat-stroked-button class="topButton">Shop Online</button>
+        </div>
+    </div>
+    <div class="product-info_description">
+        <h1 class="titleText">
+            Product Description
+        </h1>
+        <div class="bottomLine"></div>
+        <p class="description">
+            {{ productInfo['description'] }}
+        </p>
+    </div>
+    <div class="product-info_related" [hidden]="!showRelatedProducts">
+        <h1 class="titleText">
+            Related Products
+        </h1>
+        <div class="bottomLine"></div>
+        <div>
+            <mat-card class="card" *ngFor="let product of relatedProducts">
+                <img mat-card-image src="{{ '../../../assets/uploads/' + product['slug'] + '.png' }}">
+                <mat-card-content>
+                    <p>
+                        {{ product['title'] }}
+                    </p>
+                    <p>
+                        {{ product['price'] | currency:'USD' }}
+                    </p>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</div>
