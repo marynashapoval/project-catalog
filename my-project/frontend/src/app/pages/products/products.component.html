@@ -1,0 +1,11 @@
+<div class="wrap cards">
+    <mat-card class="card" *ngFor="let product of products" [routerLink]="['product-info/' + product['id']]">
+        <img mat-card-image src='{{ "../../../assets/uploads/" + product["slug"] + ".png" }}'
+            alt="{{ product['title'] }}">
+        <mat-card-content>
+            <p>
+                {{ product['title'] }}
+            </p>
+        </mat-card-content>
+    </mat-card>
+</div>

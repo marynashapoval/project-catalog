@@ -1,0 +1,88 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+    height: 100%;
+}
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    background-color: rgba($color: #f9fafb, $alpha: 1.0);
+}
+
+mat-card {
+    overflow: hidden;
+    margin: 3% 5%;
+}
+
+.product-info_related mat-card {
+    margin: 10px;
+}
+
+.wrap {
+    margin: 0 25%;
+    &.cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: minmax(auto);
+    }
+    &.product-info {
+        & .product-info_overview {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            & img.product-image {
+                width: 85%;
+                height: auto;
+            }
+        }
+        & .product-info_description {
+            display: grid;
+            justify-content: center;
+            grid-template-columns: 1fr;
+        }
+        & .product-info_related {
+            & div {
+                display: grid;
+                justify-content: center;
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    }
+}
+
+.search-form {
+    display: flex;
+    justify-content: center;
+}
+
+.mat-form-field-wrapper {
+    width: 400px;
+}
+
+.search-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(auto);
+}
+
+mat-dialog-container {
+    width: 600px !important;
+}
+
+.login-card mat-card {
+  max-width: 400px;
+  margin: 2em auto;
+  text-align: center;
+}
+
+mat-form-field {
+  display: block;
+}
+
+.login-card {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
